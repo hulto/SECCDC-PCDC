@@ -1,5 +1,5 @@
 # iptables info
-- iptables will **need** to be enabled on each linux machine and rules **need** to be creates to block **AND** log traffic (in that reverse order). 
+- iptables will **need** to be enabled on each linux machine and rules **need** to be created to block **AND** log traffic (in that reverse order). 
 
 ## Quick command examples
 | Command | Description |
@@ -17,6 +17,13 @@
 | `iptables -A INPUT -p tcp -m state --state ESTABLISHED -m string --string "AAAAAAAAAA" --algo bm -j LOG --log-prefix "OVERFLOW "` | Log strange packets that might be trying to find a buffer overflow. | 
 
 These are just some good example commands. You can modify them to your specific needs. This is by no means an exhaustive list. 
+
+## Saving rules
+- iptables rules do not save. In other words, if you set iptables rules and then reboot, they will no longer be there. This is good if you need to test a rule as you can always reboot if you accidentally block yourself out of the computer... definitely not speaking from experience. 
+- Here is how to save: 
+- 1. iptables-save > /root/ipt.save         
+- 2. cat /root/ipt.save | iptables-restore  
+- There are other methods to do this, so if you don't like this one, a simple good search will reveal others. 
 
 ## Other Info
 
