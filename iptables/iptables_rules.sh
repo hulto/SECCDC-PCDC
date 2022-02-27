@@ -1,9 +1,19 @@
 #!/bin/bash
+
+###############################################
+# This is a sample iptables bash file.        #
+# You can run this (or something similar)     #
+# to easily fill out iptables rules quickly.  #
+#                                             #
+# Dan Rochester                               #
+###############################################
+
 ###########################################
 # To save iptables rules:                 #
 # iptables-save > /root/ipt.save          #
 # cat /root/ipt.save | iptables-restore   #
 ###########################################
+
 IPTABLES=/sbin/iptables
 MODPROBE=/sbin/modprobe
 
