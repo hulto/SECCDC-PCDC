@@ -24,7 +24,7 @@ func main() {
 	ext := flag.String("e", "", "Only locate files with this extension.")
 	size := flag.Int64("s", -1, "Only locate files >= to this size (in bytes).")
 	file := flag.String("f", "", "Write output to this file.")
-	hours := flag.Int64("t", -1, "Number of hours before the current time that the file was created after.")
+	hours := flag.Int64("t", -1, "Number of hours before the current time that the file was created/modified after.")
 	flag.Parse()
 
 	var out io.Writer
