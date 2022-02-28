@@ -36,7 +36,7 @@ Here is a small list of potentially useful pages to read regarding general linux
 ### Also
 - [YouTube](https://www.youtube.com/) 
   - Just search for linux things and there is almost always at least one good video to watch. 
-- [TryHackMe](tryhackme.com) 
+- [TryHackMe](https://www.tryhackme.com) 
   - I love this site! It has so much more than just general linux stuff - although it does have some rooms on this topic. I cannot recommend this site enough. 
 
 Keep in mind there are so many other resources out there for all kinds of linux things. If you find some good ones, make a pull request with them added - any topic regarding linux! 
