@@ -1,53 +1,54 @@
-# Linux Info
-## Resources
+# Linux
 
-Here is a small list of potentially useful pages to read regarding general linux use/administration and security. 
+## Tasks
+- Change your user's password 
+- Create a new user (add to sudoer group) to use instead of root
+  - `sudo adduser USERNAME sudo`
+- Run initial.sh 
+  - `bash initial.sh`
+  - This was made for debian-based linux distros
+- Use the output provided by initial.sh and fix and potential security threats 
+  - `sudo userdel -r USERNAME`
+- Setup `iptables` policies and rules 
+  - See the iptables folder
+- Check `lastlog` frequently
+  - This shows the last time each account has logged in
+  - This should be never for most accounts 
 
-### Security 
+## Logs 
+Active log monitoring can be an extremely effective way to determine if a system is compromised and how. However, log monitoring is only as good as the logs that are kept. 
+- Ensure good logging from `iptables` 
+  - Have a LOG rule as the last one in each chain
 
-- [Basic Security](https://linux-audit.com/ubuntu-server-hardening-guide-quick-and-secure/)
-- [Ubuntu - Security, Servers, Administration, etc](https://ubuntu.com/server/docs/security-introduction)
-- [Linux Audit Tool - Lynis](https://linux-audit.com/lynis/) 
+| Command | Description | 
+| --------| --------| 
+| `tar -cvf ${HOSTNAME}_logs.tar.gz /var/log/` | Collect all logs into a tar file |
 
-### Web
- - [Basic Apache in Ubuntu](https://ubuntu.com/tutorials/install-and-configure-apache#1-overview)
- - [Very thorough php tutorial](https://www.tutorialspoint.com/php/php_installation_linux.htm)
- - [CentOS info with PHP web server basics](https://www.tutorialspoint.com/linux_admin/configure_php_in_centos_linux.htm) 
+| Location | Description |
+| ---- | ----| 
+| /var/log/apache2/ | Access and error logs for Apache web server | 
+| /var/log/auth.log | Logs on user logins, privileged access, and remote authentication | 
+| /var/log/kern.log | Kernel logs. This is where `iptables` LOG rules go | 
+| /var/log/messages | General system info | 
+| /var/log/syslog | General logs | 
 
-### Administration
-- [CentOS](https://www.tutorialspoint.com/linux_admin/index.htm) 
-- [Ubuntu](https://help.ubuntu.com/community/SystemAdministration)
-  - Pay closer attention to "Logs and Scheduling" and "Users and Permissions" 
+## System info
+You may not need most of this, but just in-case these might be helpful. 
+| Command | Description |
+| --- | - |
+|`uname -a `| Information about the OS version | 
+| `ifconfig` | NIC information | 
+| `route` | Routing table | 
+| `netstat -a` | Display network connections | 
+| `mount` | Show filesystems | 
+| `ps -e` | Show running processes | 
+| `top` | Live feed of running processes | 
 
-### Books
-- [DevOps for the Desperate](https://nostarch.com/devops-desperate)
-  - DevOps is more or less the same as system administration. This book goes into detail about automating sys-admin tasks which does include some security aspects. 
-- [Wicked Cool Shell Scripts](https://nostarch.com/wcss2)
-  - Learn shell scripting! Mastering Bash will help so much with Linux automation. 
-- [How Linux Works](https://nostarch.com/howlinuxworks3)
-  - I haven't read this yet but I should - it looks really good.
-- [Linux Basics for Hackers](https://nostarch.com/linuxbasicsforhackers)
-  - I have yet to finish this book (even though I started reading it my freshman year), but it does have some really good info, especially with a hacker's perspective. This book is actually how I started with Linux. 
-- [Practical Linux Forensics](https://nostarch.com/practical-linux-forensics)
-  - This book is probably very technical and will assume you know linux well. Looks like an amazing read though. This could **really** help in competitions and with your cybersec knowledge. 
-- [The Linux Command Line](https://nostarch.com/tlcl2)
-  - This is a **great** resource for learning how to operate linux via the CLI. It goes into so much detail and taught me a lot. **This is probably the best place to start with linux.**
-
-### Also
-- [YouTube](https://www.youtube.com/) 
-  - Just search for linux things and there is almost always at least one good video to watch. 
-- [TryHackMe](https://www.tryhackme.com) 
-  - I love this site! It has so much more than just general linux stuff - although it does have some rooms on this topic. I cannot recommend this site enough. 
-
-Keep in mind there are so many other resources out there for all kinds of linux things. If you find some good ones, make a pull request with them added - any topic regarding linux! 
-
----
-
-## Notes
-
-I haven't read through all the resources I've listed here, so if some are bad or inadaquate, whoops. But please feel free to find better ones and add them with a pull request! 
-
-All of the books above are from No Starch Press - my favorite book publisher. They are, however, not only the one that produces books on these topcis. I've also had good success with [Manning](https://www.manning.com) and [O'Reilly](https://www.oreilly.com/search/?query=Security&extended_publisher_data=true&highlight=true&include_assessments=false&include_case_studies=true&include_courses=true&include_playlists=true&include_collections=true&include_notebooks=true&include_sandboxes=true&include_scenarios=true&is_academic_institution_account=false&source=user&sort=relevance&facet_json=true&json_facets=true&page=0&include_facets=true&include_practice_exams=true), so be sure to check those places out as well. 
-
-
-If you're like me and enjoy getting the most for you $$, then be sure to check out [Humble Bundle](https://www.humblebundle.com/). They have often had deals with No Starch Press and other CS related book publishers. You can get a ton of books for not that much money (you can basically get 15 books for the price of one) all while supporting charity. This is actually how I got most of my No Starch Press books. Keep in mind these are eBooks that you get (pdfs, kindle, etc file types). 
+## Searching filesystem 
+Here are some useful commands for finding files based on certain criteria. 
+| Command | Description | 
+| - | - | 
+| `find DIR -name '*word*'` | Find all files in directory DIR (and subdirectories) whose name contains 'word'. | 
+| `find DIR -name '.*'` | Hidden files | 
+| `find DIR -size +1GB ` | Larger than 1GB | 
+| `find / -type f -exec ls -s '{}' \; | sort -n -r | head -5` | Find the largest files in the system |  
