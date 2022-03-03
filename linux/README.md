@@ -58,3 +58,8 @@ Here are some useful commands for finding files based on certain criteria.
 Command: 
 `find / -type f -exec ls -s '{}' \; | sort -n -r 
 | head -5`
+
+## Transfer data 
+You can move files from a system to another securely with `scp`. As an example, if we want to move a file *logs.tar.gz* to another system at user@2.2.2.2, we could run this command: 
+
+`scp logs.tar.gz user@2.2.2.2:/home/user/logs.tar.gz` 
