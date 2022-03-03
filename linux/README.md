@@ -51,4 +51,10 @@ Here are some useful commands for finding files based on certain criteria.
 | `find DIR -name '*word*'` | Find all files in directory DIR (and subdirectories) whose name contains 'word'. | 
 | `find DIR -name '.*'` | Hidden files | 
 | `find DIR -size +1GB ` | Larger than 1GB | 
-| `find / -type f -exec ls -s '{}' \; | sort -n -r | head -5` | Find the largest files in the system |  
+| See command below | Find the largest files in the system | 
+| `find DIR -mmin -5` | All files modified within the last 5 minutes | 
+| `grep -i -r DIR -e 'word'` | Search directory DIR for files with 'word' in them |  
+
+Command: 
+`find / -type f -exec ls -s '{}' \; | sort -n -r 
+| head -5`
