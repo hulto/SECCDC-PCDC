@@ -4,7 +4,7 @@
 # Run this after changing your passwd  !
 # and making a new sudoer user to use  !
 # via ssh (if needed). This script     !
-# makes it so that root cannt ssh in   !
+# makes it so that root cannot ssh in   !
 # and locks the root account           !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
