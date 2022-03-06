@@ -2,6 +2,10 @@
 
 ## Tasks
 - Change your user's password 
+- Update/Upgrade
+  - `sudo apt clean`
+  - `sudo apt update`
+  - `sudo apt upgrade -y`
 - Create a new user (add to sudoer group) to use instead of root
   - `sudo adduser USERNAME sudo`
 - Run initial.sh 
@@ -11,11 +15,12 @@
   - `sudo userdel -r USERNAME`
 - Setup `iptables` policies and rules 
   - See the iptables folder
-- Security Hardening 
-  - See **hardening** folder
+- ## **Security Hardening**
+  - See hardening folder
 - Check `lastlog` frequently
   - This shows the last time each account has logged in
   - This should be never for most accounts 
+- Log monitoring 
 
 ## Logs 
 Active log monitoring can be an extremely effective way to determine if a system is compromised and how. However, log monitoring is only as good as the logs that are kept. 
@@ -26,6 +31,7 @@ Active log monitoring can be an extremely effective way to determine if a system
 | --------| --------| 
 | `tar -cvf ${HOSTNAME}_logs.tar.gz /var/log/` | Collect all logs into a tar file |
 
+### Log locations 
 | Location | Description |
 | ---- | ----| 
 | /var/log/apache2/ | Access and error logs for Apache web server | 
