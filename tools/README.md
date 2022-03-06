@@ -18,6 +18,8 @@ Just a list of potentially helpful tools I've found through either my reading or
   - Can also act as an IDS 
 - [Suricata](https://suricata.io/)
   - Amazing open-source tool for NSM/IDS/IPS/PCAP processing. We **definitly** should learn how to use this tool well and implement it in our competitions. 
+- [Security Onion](https://securityonionsolutions.com/)
+  - This is a SIEM OS that would be very good to learn. Some competitions will have this, others won't. 
 
 ## Please
 Please go and search on your own for good tools for cyber defense and add them to this list with a pull-request! You can even program your own tools as I have done. 
