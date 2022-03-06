@@ -7,7 +7,8 @@
   - `sudo apt update`
   - `sudo apt upgrade -y`
 - Create a new user (add to sudoer group) to use instead of root
-  - `sudo adduser USERNAME sudo`
+  - `sudo adduser USERNAME`
+  - `sudo usermod -aG sudo USERNAME` 
 - Run initial.sh 
   - `bash initial.sh`
   - This was made for debian-based linux distros
@@ -15,6 +16,8 @@
   - `sudo userdel -r USERNAME`
 - Setup `iptables` policies and rules 
   - See the iptables folder
+- Make backups
+  - Notably of any web servers 
 - ### **Security Hardening**
   - See hardening folder
 - Check `lastlog` frequently
