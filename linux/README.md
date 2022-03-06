@@ -11,6 +11,8 @@
   - `sudo userdel -r USERNAME`
 - Setup `iptables` policies and rules 
   - See the iptables folder
+- Security Hardening 
+  - See **hardening** folder
 - Check `lastlog` frequently
   - This shows the last time each account has logged in
   - This should be never for most accounts 
