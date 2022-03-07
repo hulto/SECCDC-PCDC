@@ -63,7 +63,18 @@ This is another open-source tool that is able to monitor system events.
   - `sysdig` 
   - `csysdig`[^1]
     - This is a terminal-based GUI for Sysdig. This is a great option for actively trying to figure out what is happening on a given system in live time. By pressing F2, you can get other information about your system, such as currently open files, network connections, etc.
+    - Some of the more interesting views:
+      - Spy Users
+      - Spy syslog
+      - Connections
+      - Directories
+      - Files
+
+## unhide
+This is a simple but neat linux tool that tries to find "hidden" processes. 
+- `sudo apt install -y unhide`
+- `unhide brute` 
 
 
 
-[^1]: You'll need to run this with `sudo`. Also, if you get an error with something about xterm-256 color, try running `export TERM=xterm`, make sure xterm is installed, and try again. 
+[^1]: You'll need to run this with `sudo`. Also, if you get an error with something about xterm-256color, try running `export TERM=xterm`, make sure xterm is installed, and try again. 
