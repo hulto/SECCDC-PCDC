@@ -24,6 +24,8 @@
   - This shows the last time each account has logged in
   - This should be never for most accounts 
 - Log monitoring 
+- `w`
+  - Show who is currently logged in and what they're doing
 
 ## Logs 
 Active log monitoring can be an extremely effective way to determine if a system is compromised and how. However, log monitoring is only as good as the logs that are kept. 

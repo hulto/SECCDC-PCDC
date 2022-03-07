@@ -49,3 +49,21 @@ This is collection of linux kernel modifications that greatly enchance the secru
 This is a good honeypot monitoring tool that can be installed on Linux or Windows (make sure python is installed). 
 
 To install, clone the repo, move into its root directory, and run `sudo python3 setup.py`. There will be on-screen questions for setup. The config file is located in /var/artillery and you can also find other Artillery utility python scripts there as well. 
+
+## [OSSEC](https://www.ossec.net/)
+This is a host-based IDS that is open-source and widely used. It has many features, of which inlcudes FIM (file integrity monitoring), log analysis, Windows registry monitoring, rootkit detection, alerting, and **active response**. 
+
+OSSEC requires and agent and a server to work. As such, I'm not sure if this is something that we can implement in competitions, but having the server and agent on the same machine might work. 
+
+## [Tripwire](https://github.com/Tripwire/tripwire-open-source)
+This is an open-source FIM. I haven't been able to get this to work locally, but it's apparently quite good. 
+
+## [Sysdig](https://github.com/draios/sysdig/wiki/How-to-Install-Sysdig-for-Linux)
+This is another open-source tool that is able to monitor system events. 
+  - `sysdig` 
+  - `csysdig`[^1]
+    - This is a terminal-based GUI for Sysdig. This is a great option for actively trying to figure out what is happening on a given system in live time. By pressing F2, you can get other information about your system, such as currently open files, network connections, etc.
+
+
+
+[^1]: You'll need to run this with `sudo`. Also, if you get an error with something about xterm-256 color, try running `export TERM=xterm`, make sure xterm is installed, and try again. 
