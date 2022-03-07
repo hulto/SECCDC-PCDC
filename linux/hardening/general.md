@@ -61,7 +61,21 @@ This is an open-source FIM. I haven't been able to get this to work locally, but
 ## [Sysdig](https://github.com/draios/sysdig/wiki/How-to-Install-Sysdig-for-Linux)
 This is another open-source tool that is able to monitor system events. 
   - `sysdig` 
-  - `csysdig`[^1]
+  - `sysdig proc.name=ssh`
+    - Only get information about a certain process - in this case, ssh. 
+  - `sysdig -c topprocs_net`
+    - Display the top networking processes 
+    - You could potentially find a C2 process here
+    - You can replace "net" with "cpu" to get top CPU processes. This method is **better than `ps` or `top`** as it would be harder to hide processes from this command due to how it works 
+  - `sysdig -p"%evt.arg.path" "evt.type=chdir and user.name=root"`
+    - See which directories the user root has been accessing 
+  - `sysdig fd.name contains /some/file/or/dir`
+    - Monitor actions taken on a file or directory 
+    - add `evt.type=open` joined with an `and` to only care about open files within a directory 
+  - `sysdig -qw filename.scap` 
+    - Write output to a file for later analysis
+    - These files can also be opened and viewed with the `Csysdig` GUI 
+  - `sudo csysdig`[^1]
     - This is a terminal-based GUI for Sysdig. This is a great option for actively trying to figure out what is happening on a given system in live time. By pressing F2, you can get other information about your system, such as currently open files, network connections, etc.
     - Some of the more interesting views:
       - Spy Users
@@ -77,4 +91,4 @@ This is a simple but neat linux tool that tries to find "hidden" processes.
 
 
 
-[^1]: You'll need to run this with `sudo`. Also, if you get an error with something about xterm-256color, try running `export TERM=xterm`, make sure xterm is installed, and try again. 
+[^1]: If you get an error with something about xterm-256color, try running `export TERM=xterm`, make sure xterm is installed, and try again. 
