@@ -30,5 +30,5 @@ As an example, let's say we make the algorithm as follows:
 
 This will mean that everyone can generate the password for each computer and not have to memorize all the passwords - just the algorithm. I would say make the password length **at least** 12 characters. This will make brute-force attempts meaningless. 
 
-Your team should figure out a way to also keep track of password changes. Perhaps a file on an **out-of-scope* system? Perhaps a on a piece of paper that one person in the group controls and gives access to? Figure it out **before the competition**. 
+Your team should figure out a way to also keep track of password changes. Perhaps a file on an **out-of-scope** system? Perhaps a on a piece of paper that one person in the group controls and gives access to? Figure it out **before the competition**. 
 
