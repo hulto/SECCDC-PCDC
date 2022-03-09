@@ -43,7 +43,7 @@ This is collection of linux kernel modifications that greatly enchance the secru
 - [Blog about installing it in Debian](https://micahflee.com/2016/01/debian-grsecurity/) 
 
 ## sudo
-`sudo` is a very powerful command and needs to be locked down. Besure to remove any and all users from the sudoer group that do not *need* to be in it. 
+`sudo` is a very powerful command and needs to be locked down. Be sure to remove any and all users from the sudoer group that do not *need* to be in it. 
 
 ## [Artillery](https://github.com/BinaryDefense/artillery)
 This is a good honeypot monitoring tool that can be installed on Linux or Windows (make sure python is installed). 

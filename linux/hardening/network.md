@@ -14,7 +14,7 @@
 - ### Secure SSH 
 
 ## **SSH**
-SSH is the **S**ecure **SH**ell protocol and it used primarily to control a system remotely. As such, SSH is often targetted by attackers. Here are some good ideas for securing the SSH server on your machine: 
+SSH is the **S**ecure **SH**ell protocol and it's used primarily to control a system remotely. As such, SSH is often targetted by attackers. Here are some good ideas for securing the SSH server on your machine: 
 - Consider using SSH keys instead of passwords to authenticate. You can generate the keys easily and then disable password authentication, which will prevent brute force attacks 
 - /etc/ssh/sshd_config
     - PubkeyAuthentication yes 
@@ -30,7 +30,7 @@ SSH is the **S**ecure **SH**ell protocol and it used primarily to control a syst
   - PermitRootLogin no
   - If you only want to allow root to login with a key:
     - PermitRootLogin without-password 
-    - I recommend just diabling root login all together 
+    - I recommend just disabling root login all together 
 - ### Only allow certain users to SSH
   - AllowUsers user1 user2 
     - Put this in the config, with user1, user2, etc. being the users that will be permitted to ssh in
