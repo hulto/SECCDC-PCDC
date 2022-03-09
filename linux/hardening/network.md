@@ -11,6 +11,50 @@
   - `nmap localhost -p-` 
   - Check /etc/xinetd.d/ for xinetd services 
     - To disable, in the service's config file, add "disable = yes" 
+- ### Secure SSH 
+
+## **SSH**
+SSH is the **S**ecure **SH**ell protocol and it used primarily to control a system remotely. As such, SSH is often targetted by attackers. Here are some good ideas for securing the SSH server on your machine: 
+- Consider using SSH keys instead of passwords to authenticate. You can generate the keys easily and then disable password authentication, which will prevent brute force attacks 
+- /etc/ssh/sshd_config
+    - PubkeyAuthentication yes 
+- `ssh-keygen` 
+  - It will ask for a password 
+  - Creates ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub 
+  - `ssh-copy-id [user@]host` to copy the keys to a remote host
+    - Adds pub key to ~/.ssh/authorized_keys in remote host
+  - PasswordAuthentication no 
+    - Put this in the config file if you want to only authenticate via keys 
+    - If this is in place, even if an attacker acquire's the user's password, authentication will not be possible without the correct key
+- ### Disable root login 
+  - PermitRootLogin no
+  - If you only want to allow root to login with a key:
+    - PermitRootLogin without-password 
+    - I recommend just diabling root login all together 
+- ### Only allow certain users to SSH
+  - AllowUsers user1 user2 
+    - Put this in the config, with user1, user2, etc. being the users that will be permitted to ssh in
+  - AllowGroups group1 gropu2 
+    - Same as before except with groups 
+  - DenyUsers user1 user2
+  - DenyGroups group1 group2 
+- AllowTcpForwarding no
+- GatewayPorts no
+- Protocol 2
+  - This is a more secure protcol for SSH
+- ListenAddress address1
+  - Specify on which address SSH should be listening on
+  - You can have multiple ListenAddress directives 
+  - **Use this to have SSH only listening on the private network and not the internet**
+- Port 2222 
+  - Specify the port to use
+- Banner none
+  - This makes sure that no data about how the SSH server is running is sent before connections are made 
+
+### **After any changes, make sure to reload the SSH service.** 
+`systemctl reload sshd` 
+
+---
 
 ## netstat
 This is a common linux tool, but it is also supported on Windows. It's best to run `netstat` as root or with `sudo`. 
