@@ -1,5 +1,17 @@
 # Linux Networking Hardening 
 
+## General Guidelines 
+- Make sure network daemons are run by a non-root system user
+- Only allow the outside network (internet) to have access to the very least it needs
+  - Configure SSH and the other services to only be accessible to the private network, and not to the internet
+  - Things like web server DBs certainly do not need to be accessible from outside the private network
+- Stop any network (or general) services that don't need to be running 
+  - You can use the `systemctl` command for this (see the persistence.md file) 
+  - See `netstat` and `lsof` info below 
+  - `nmap localhost -p-` 
+  - Check /etc/xinetd.d/ for xinetd services 
+    - To disable, in the service's config file, add "disable = yes" 
+
 ## netstat
 This is a common linux tool, but it is also supported on Windows. It's best to run `netstat` as root or with `sudo`. 
 - `netstat -aon | more` 
