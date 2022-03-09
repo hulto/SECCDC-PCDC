@@ -3,7 +3,7 @@
 ## Info
 This repository is made with both learning and practical goals in mind, with the intention that it be used for preparation of CDCs, but also for following along with things to do during the CDCs. 
 
-There is a lot of information here. As such, team members need to make sure that he/she understands everything applicable and is ready to apply the knowledge during the competition with no hiccups. 
+There is a lot of information here. As such, each team member needs to make sure that he/she understands everything applicable and is ready to apply the knowledge during the competition with no hiccups. 
 
 I recommend that team members specialize in either Windows or Linux tasks/knowledge. That way there can be a Windows group and a Linux group within the team that help eachother. 
 
@@ -30,5 +30,5 @@ As an example, let's say we make the algorithm as follows:
 
 This will mean that everyone can generate the password for each computer and not have to memorize all the passwords - just the algorithm. I would say make the password length **at least** 12 characters. This will make brute-force attempts meaningless. 
 
-Your team should figure out a way to also keep track of password changes. Perhaps a file on an **out-of-scope* system? Perhaps a on a piece of paper that one person in the group controls and gives access to? Figure it out **before the competition**. 
+Your team should figure out a way to also keep track of password changes. Perhaps a file on an **out-of-scope** system? Perhaps a on a piece of paper that one person in the group controls and gives access to? Figure it out **before the competition**. 
 
